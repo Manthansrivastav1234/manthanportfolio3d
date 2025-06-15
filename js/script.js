@@ -35,7 +35,9 @@ function initThreeJsBackground() {
     
     // Create renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio);  // Improved rendering quality
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio * 0.6); // Lower resolution, smoother performance
+
     renderer.setClearColor(0x2c3e50, 1);
     canvasContainer.appendChild(renderer.domElement);
     
